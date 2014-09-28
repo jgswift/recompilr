@@ -1,0 +1,30 @@
+# .scrutinizer.yml
+build:
+    environment:
+        php:
+            version: 5.5.12       # Common versions: 5.4.28, 5.5.12, or hhvm
+checks:
+    php:
+        code_rating: true
+        duplication: false
+        variable_existence: true
+        useless_calls: true
+        use_statement_alias_conflict: true
+        unused_variables: false
+        unused_properties: false
+        unused_parameters: false
+        unused_methods: true
+        unreachable_code: true
+        sql_injection_vulnerabilities: true
+        security_vulnerabilities: true
+        precedence_mistakes: true
+        precedence_in_conditions: true
+        parameter_non_unique: true
+        no_property_on_interface: true
+        no_non_implemented_abstract_methods: false
+        deprecated_code_usage: true
+        closure_use_not_conflicting: true
+        closure_use_modifiable: true
+        avoid_useless_overridden_methods: true
+        avoid_conflicting_incrementers: true
+        assignment_of_null_return: true

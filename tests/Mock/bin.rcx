@@ -1,0 +1,18 @@
+<?php 
+namespace recompilr\Tests;
+
+final class BlankClass_54279ff967437 extends Mock\BlankBase  {
+    public $name1;
+}
+
+\recompilr\map('recompilr\Tests\BlankClass','recompilr\Tests\BlankClass_54279ff967437');
+
+
+namespace recompilr;
+
+class OtherClass_54279ff967531  {
+    public $foo;
+}
+
+\recompilr\map('recompilr\OtherClass','recompilr\OtherClass_54279ff967531');
+
