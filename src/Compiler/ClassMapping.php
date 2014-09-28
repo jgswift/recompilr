@@ -21,7 +21,7 @@ namespace recompilr\Compiler {
         
         /**
          * last time file was updated
-         * @var string
+         * @var integer
          */
         private $lastModified;
         
@@ -109,7 +109,7 @@ namespace recompilr\Compiler {
         
         /**
          * Retrieve file last modification time
-         * @return string
+         * @return integer
          */
         public function getLastModified() {
             if(empty($this->lastModified)) {

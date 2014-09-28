@@ -54,7 +54,7 @@ namespace recompilr\Compiler {
         
         /**
          * Retrieve list of compilers
-         * @return \recompilr\Compiler\CompilerInterface
+         * @return array [\recompilr\Compiler\CompilerInterface]
          */
         public function getCompilers() {
             return $this->compilers;

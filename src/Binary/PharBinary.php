@@ -1,6 +1,7 @@
 <?php
 namespace recompilr\Binary\PharBinary {
     use recompilr\Exception;
+    use recompilr\Compiler\AggregateCompiler;
     
     class PharBinary extends AggregateBinary {
         /**

@@ -7,7 +7,7 @@ namespace recompilr {
     class Recompiler {
         /**
          * globally store filesystems 
-         * @var Vfs\FileSystem
+         * @var \Vfs\FileSystem
          */
         private static $fileSystem;
         
