@@ -1,18 +1,1 @@
-<?php 
-namespace recompilr\Tests;
-
-final class BlankClass_54279ff967437 extends Mock\BlankBase  {
-    public $name1;
-}
-
-\recompilr\map('recompilr\Tests\BlankClass','recompilr\Tests\BlankClass_54279ff967437');
-
-
-namespace recompilr;
-
-class OtherClass_54279ff967531  {
-    public $foo;
-}
-
-\recompilr\map('recompilr\OtherClass','recompilr\OtherClass_54279ff967531');
-
+PD9waHAgDQpuYW1lc3BhY2UgcmVjb21waWxyXFRlc3RzOw0KDQpmaW5hbCBjbGFzcyBCbGFua0NsYXNzXzU0MjdhYTk5NjQ4ODUgZXh0ZW5kcyBNb2NrXEJsYW5rQmFzZSAgew0KICAgIHB1YmxpYyAkbmFtZTE7DQp9DQoNClxyZWNvbXBpbHJcbWFwKCdyZWNvbXBpbHJcVGVzdHNcQmxhbmtDbGFzcycsJ3JlY29tcGlsclxUZXN0c1xCbGFua0NsYXNzXzU0MjdhYTk5NjQ4ODUnKTsNCg0KDQpuYW1lc3BhY2UgcmVjb21waWxyOw0KDQpjbGFzcyBPdGhlckNsYXNzXzU0MjdhYTk5NjQ5NGEgIHsNCiAgICBwdWJsaWMgJGZvbzsNCn0NCg0KXHJlY29tcGlsclxtYXAoJ3JlY29tcGlsclxPdGhlckNsYXNzJywncmVjb21waWxyXE90aGVyQ2xhc3NfNTQyN2FhOTk2NDk0YScpOw0KDQo=
