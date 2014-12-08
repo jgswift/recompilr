@@ -10,9 +10,9 @@ PHP 5.5+ factory runtime class compiler
 
 ## Description
 
-recompilr can take a class definition and recompile it in runtime using a unique hash. 
-This essentially allows an application to redeclare classes at runtime.
-An interface is provided to keep track of aliases and handle instantiation of aliased classes.
+recompilr uses a class definition and recompiles it at runtime using eval and a unique hash identifier. 
+Classes may be recompiled after changes are made to the class definition without requiring the application to restart.
+This effectively allows an application to redeclare classes at runtime.
 
 ## Installation
 
@@ -45,15 +45,35 @@ class FooClass {
     /* */
 }
 
-// usage
+// compiles FooClass from given class definition file
 recompilr\execute('FooClass','path/to/FooClass.php');
 
+// factory creates an instance of FooClass
 $foo = recompilr\make('FooClass');
 
 var_dump($foo); // (object) FooClass_*hash
 ```
 
-### Recompiling
+### Compile from autoloaded class
+
+```php
+// class must be available to autoloader
+namespace MyNamespace {
+    class FooClass {
+        /* */
+    }
+}
+
+// compiles FooClass without an explicit class file, relying on the autoloader to find the class definition
+recompilr\execute('MyNamespace\FooClass');
+
+// factory creates an instance of FooClass
+$foo = recompilr\make('FooClass');
+
+var_dump($foo); // (object) FooClass_*hash
+```
+
+### Recompiling everything
 
 When it is determined that a class definition was updated, all updated classes may be recompiled
 by using ```recompilr\all```.
@@ -64,14 +84,15 @@ by using ```recompilr\all```.
 recompilr\all();
 ```
 
-**Note: will not compile files where bracketed namespaces are used**
-**Note: all compiled classes are final and may not be inherited from**
+*Note: will not compile files where bracketed namespaces are used*
+
+*Note: all compiled classes are final and may not be inherited from*
 
 ### Binary handling
 
 #### Saving to file
 ```php
-recompilr\execute('FooClass','path/to/FooClass.php');
+recompilr\execute('FooClass');
 
 recompilr\binary('path/to/binary.rcx');
 ```

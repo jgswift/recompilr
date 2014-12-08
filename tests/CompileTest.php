@@ -3,6 +3,16 @@ namespace recompilr\Tests {
     use recompilr;
     
     class CompileTest extends RecompilrTestCase {
+        function testCompileWithoutPath() {
+            $className = 'recompilr\Tests\Mock\BlankBase';
+            
+            recompilr\execute($className);
+
+            $blank = recompilr\make($className);
+            
+            $this->assertInstanceOf($className,$blank);
+        }
+        
         function testFnLoadLast() {
             $binary = __DIR__.DIRECTORY_SEPARATOR.'Mock'.DIRECTORY_SEPARATOR.'bin.rcx';
             
