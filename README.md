@@ -58,10 +58,9 @@ var_dump($foo); // (object) FooClass_*hash
 
 ```php
 // class must be available to autoloader
-namespace MyNamespace {
-    class FooClass {
-        /* */
-    }
+namespace MyNamespace;
+class FooClass {
+    /* */
 }
 
 // compiles FooClass without an explicit class file, relying on the autoloader to find the class definition
