@@ -68,15 +68,14 @@ namespace MyNamespace {
 recompilr\execute('MyNamespace\FooClass');
 
 // factory creates an instance of FooClass
-$foo = recompilr\make('FooClass');
+$foo = recompilr\make('MyNamespace\FooClass');
 
 var_dump($foo); // (object) FooClass_*hash
 ```
 
 ### Recompiling everything
 
-When it is determined that a class definition was updated, all updated classes may be recompiled
-by using ```recompilr\all```.
+When class definitions are expected to have changed, all classes may be recompiled using ```recompilr\all```.
 
 ```php
 // change path/to/FooClass.php while application is running
@@ -92,7 +91,7 @@ recompilr\all();
 
 #### Saving to file
 ```php
-recompilr\execute('FooClass');
+recompilr\execute('MyNamespace\FooClass');
 
 recompilr\binary('path/to/binary.rcx');
 ```
@@ -102,7 +101,7 @@ recompilr\binary('path/to/binary.rcx');
 ```php
 recompilr\load('path/to/binary.rcx');
 
-$foo = recompilr\make('FooClass');
+$foo = recompilr\make('MyNamespace\FooClass');
 
 var_dump($foo); // (object) FooClass_*hash
 ```
